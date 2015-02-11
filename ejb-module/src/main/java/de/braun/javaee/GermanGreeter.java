@@ -11,7 +11,6 @@ import javax.ejb.Stateless;
 public class GermanGreeter implements Greeter{
 	@Override
 	public String greet() {
-		// TODO Auto-generated method stub
 		return "Guten Tag!";
 	}
 }
