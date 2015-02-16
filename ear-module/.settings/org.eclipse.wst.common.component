@@ -11,5 +11,8 @@
         <dependent-module archiveName="ejb-module-0.0.1-SNAPSHOT.jar" deploy-path="/" handle="module:/resource/ejb-module/ejb-module">
             <dependency-type>uses</dependency-type>
         </dependent-module>
+        <dependent-module archiveName="postgresql-9.3-1103-jdbc4.jar" deploy-path="/" handle="module:/classpath/var/M2_REPO/org/postgresql/postgresql/9.3-1103-jdbc4/postgresql-9.3-1103-jdbc4.jar">
+            <dependency-type>uses</dependency-type>
+        </dependent-module>
     </wb-module>
 </project-modules>
