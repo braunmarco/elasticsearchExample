@@ -26,10 +26,5 @@
 			<artifactId>javaee-api</artifactId>
 			<version>7.0</version>
 		</dependency>
-		<dependency>
-			<groupId>de.braun.javaee</groupId>
-			<artifactId>persistence-module</artifactId>
-			<version>1.0</version>
-		</dependency>
 	</dependencies>
 </project>
