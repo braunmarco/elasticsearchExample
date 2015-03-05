@@ -20,7 +20,8 @@ public class LibraryPersistenceBean implements LibraryPersistenceBeanRemote {
 	/**
      * @see LibraryPersistenceBeanRemote#getBookts()
      */
-    public List<Book> getBooks() {
+    @SuppressWarnings("unchecked")
+	public List<Book> getBooks() {
 		return entityManager.createQuery("From Book").getResultList();
     }
 

@@ -41,6 +41,7 @@ public class UserManagerBean implements UserManagerBeanRemote {
 		// TODO Auto-generated method stub
 	}
 
+	@SuppressWarnings("unchecked")
 	@Override
 	public List<User> getUsers() {
 		// TODO Auto-generated method stub
