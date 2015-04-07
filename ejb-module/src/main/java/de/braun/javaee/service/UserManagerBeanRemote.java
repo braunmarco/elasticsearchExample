@@ -9,6 +9,7 @@ import de.braun.javaee.models.User;
 @Remote
 public interface UserManagerBeanRemote {
 	public void addUser (final User user);
+	public void updateUser (final User user);
 	public void removeUser (final long id);
 	public void setStatus (final boolean active);
 	public List<User> getUsers ();

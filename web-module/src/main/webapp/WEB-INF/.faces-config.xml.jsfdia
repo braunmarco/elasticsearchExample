@@ -15,6 +15,30 @@
    PATH="/view_userlist.xhtml" model-entity="JSFProcessItem">
    <PROCESS-ITEM-OUTPUT ID="index::#index.xhtml" NAME="output"
     PATH="/index.xhtml" TARGET="rules:#index.xhtml" TITLE="index" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="inputUserDetails::#inputUserDetails.xhtml"
+    NAME="output1" PATH="/inputUserDetails.xhtml"
+    TARGET="rules:#inputUserDetails.xhtml" TITLE="inputUserDetails" model-entity="JSFProcessItemOutput"/>
+   <PROCESS-ITEM-OUTPUT ID="updateUserDetails::#updateUserDetails.xhtml"
+    NAME="output2" PATH="/updateUserDetails.xhtml"
+    TARGET="rules:#updateUserDetails.xhtml" TITLE="updateUserDetails" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#inputUserDetails.xhtml"
+  PATH="/inputUserDetails.xhtml" SHAPE="632,168,50,25" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#inputUserDetails.xhtml:0" NAME="item"
+   PATH="/inputUserDetails.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view_userlist::#view_userlist.xhtml"
+    NAME="output" PATH="/view_userlist.xhtml"
+    TARGET="rules:#view_userlist.xhtml" TITLE="view_userlist" model-entity="JSFProcessItemOutput"/>
+  </PROCESS-ITEM>
+ </PROCESS-ITEM>
+ <PROCESS-ITEM NAME="rules:#updateUserDetails.xhtml"
+  PATH="/updateUserDetails.xhtml" SHAPE="336,400,50,41" model-entity="JSFProcessGroup">
+  <PROCESS-ITEM ID="rules:#updateUserDetails.xhtml:0" NAME="item"
+   PATH="/updateUserDetails.xhtml" model-entity="JSFProcessItem">
+   <PROCESS-ITEM-OUTPUT ID="view_userlist::#view_userlist.xhtml"
+    NAME="output" PATH="/view_userlist.xhtml"
+    TARGET="rules:#view_userlist.xhtml" TITLE="view_userlist" model-entity="JSFProcessItemOutput"/>
   </PROCESS-ITEM>
  </PROCESS-ITEM>
 </PROCESS>

@@ -4,15 +4,16 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://java.sun.com/jsf/html"
 	xmlns:f="http://java.sun.com/jsf/core"
-	xmlns:ui="http://java.sun.com/jsf/facelets">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<title>Welcome Marco</title>
 </h:head>
 <h:body>
-	Welcome! Marco
+	Welcome! Marco Hallo wie gehts
 	<br />
 	<h:form>
-		<h:commandButton action='#{userManagerService.showUserList()}' value='view userlist' />
+		<p:commandButton action='#{userListManagedBean.showUserList()}' value='view userlist' />
 	</h:form>
 </h:body>
 </html>

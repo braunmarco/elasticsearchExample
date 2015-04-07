@@ -7,32 +7,91 @@
 	xmlns:ui="http://java.sun.com/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<title>Welcome</title>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" /> 
+	<title>User List</title>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </h:head>
 <h:body>
-  <p:panel header="Test" toggleable="true">
-    <h:outputText value="Hallo, hier spricht PrimeFaces!"/>
-  </p:panel>
-	<p:fieldset id="userList" legend="Available Users"
-		style="margin-top:20px">
-		<p:dataTable value="#{userManagerService.userList}" var="o">
+	<h:form id="form">
+		<p:dataTable
+			id="userDT" 
+			value="#{userListManagedBean.userList}"
+			var="user" 
+			selectionMode="single"
+			selection="#{userListManagedBean.selectedUser}" 
+			paginator="true"
+			rowKey="#{user.id}" 
+			rows="10">
+			
+			<f:facet name="footer">
+				<p:commandButton id='new' action='#{userListManagedBean.addUserToList()}' icon="ui-icon-plus" />
+			</f:facet>
 			<p:column>
 				<f:facet name="header">No.</f:facet>
-    		#{o.id}
-    	</p:column>
+    			#{user.id}
+    		</p:column>
 			<p:column>
 				<f:facet name="header">Name</f:facet>
-    		#{o.name}
-    	</p:column>
+    			#{user.name}
+    		</p:column>
 			<p:column>
 				<f:facet name="header">Surname</f:facet>
-    		#{o.surname}
-    	</p:column>
+    			#{user.surname}
+    		</p:column>
+			<p:column>
+				<p:commandButton 
+					update=":form:userDetail"
+					oncomplete="PF('userDialog').show()" 
+					icon="ui-icon-search"
+					title="view">
+					<f:setPropertyActionListener 
+						value="#{user}"
+						target="#{userListManagedBean.selectedUser}" />
+				</p:commandButton>
+				<p:commandButton
+					icon="ui-icon-trash"
+					title="delete">
+					<f:setPropertyActionListener 
+						value="#{user}"
+						target="#{userListManagedBean.selectedUser}" />
+				</p:commandButton>
+				<p:commandButton
+					icon="ui-icon-pencil"
+					action="#{userListManagedBean.updateUserDetails()}"
+					title="edit">
+					<f:setPropertyActionListener 
+						value="#{user}"
+						target="#{userManagedBean.user}" />
+				</p:commandButton>
+			</p:column>
+			<f:facet name="footer">
+				<p:commandButton id='back' action='index' value='Back' />
+			</f:facet>
 		</p:dataTable>
-	</p:fieldset>
-	<h:form>
-		<h:commandButton id='back' action='index' value='Back' />
+		<p:dialog 
+			header="User Info" 
+			widgetVar="userDialog" 
+			modal="true"
+			showEffect="fade" 
+			hideEffect="fade" 
+			resizable="false">
+			<p:outputPanel 
+				id="userDetail" 
+				style="text-align:center;">
+				<p:panelGrid columns="2"
+					rendered="#{not empty userListManagedBean.selectedUser}"
+					columnClasses="label,value">
+
+					<h:outputText value="Id:" />
+					<h:outputText value="#{userListManagedBean.selectedUser.id}" />
+
+					<h:outputText value="Name:" />
+					<h:outputText value="#{userListManagedBean.selectedUser.name}" />
+
+					<h:outputText value="Surname:" />
+					<h:outputText value="#{userListManagedBean.selectedUser.surname}" />
+				</p:panelGrid>
+			</p:outputPanel>
+		</p:dialog>
 	</h:form>
 </h:body>
 </html>

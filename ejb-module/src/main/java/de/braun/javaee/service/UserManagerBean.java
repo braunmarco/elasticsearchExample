@@ -53,4 +53,10 @@ public class UserManagerBean implements UserManagerBeanRemote {
 		// TODO Auto-generated method stub
 		return (User) entityManager.createQuery("From User where id="+id).getSingleResult();
 	}
+
+	@Override
+	public void updateUser(User user) {
+		// TODO Auto-generated method stub
+		entityManager.merge(user);
+	}
 }
