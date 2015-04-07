@@ -13,18 +13,18 @@ import de.braun.javaee.service.UserManagerBeanRemote;
 @ManagedBean
 @RequestScoped
 public class UserListManagedBean {
-	
+
 	@EJB
 	private UserManagerBeanRemote umb;
-	
-	private User selectedUser;
-	private List <User> userList;
 
-    @PostConstruct
-    public void init() {
-    	userList = umb.getUsers();
-    }
-    
+	private User selectedUser;
+	private List<User> userList;
+
+	@PostConstruct
+	public void init() {
+		userList = umb.getUsers();
+	}
+
 	public List<User> getUserList() {
 		return userList;
 	}
@@ -36,17 +36,17 @@ public class UserListManagedBean {
 	public void setSelectedUser(User selectedUser) {
 		this.selectedUser = selectedUser;
 	}
-	
+
 	/* JSF-Path */
-	public String showUserList (){
+	public String showUserList() {
 		return "view_userlist";
 	}
-	
+
 	public String addUserToList() {
-		return "inputUserDetails";		
+		return "inputUserDetails";
 	}
-	
-	public String updateUserDetails(){
+
+	public String updateUserDetails() {
 		return "updateUserDetails";
-	}	
+	}
 }
