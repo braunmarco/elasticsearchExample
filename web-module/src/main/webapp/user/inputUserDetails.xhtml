@@ -1,0 +1,32 @@
+<ui:composition template="../template/commonLayout.xhtml"
+	xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+	
+	<ui:define name="content">
+		<h:form>
+
+			<p:panelGrid columns="2">
+
+				<p:outputLabel value="Name:" />
+				<p:inputText value="#{userManagedBean.name}" />
+
+				<p:outputLabel value="Surname:" />
+				<p:inputText value="#{userManagedBean.surname}" />
+
+			</p:panelGrid>
+
+			<p:commandButton 
+				action='#{userManagedBean.add()}' 
+				value='add user' />
+			
+			<p:commandButton 
+				action='#{userListManagedBean.showUserList()}'
+				value='view userlist' />
+
+		</h:form>
+	</ui:define>
+
+</ui:composition>
