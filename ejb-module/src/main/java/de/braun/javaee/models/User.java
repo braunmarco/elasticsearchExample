@@ -1,6 +1,7 @@
 package de.braun.javaee.models;
 
 import java.io.Serializable;
+
 import javax.persistence.*;
 
 /**
@@ -9,7 +10,11 @@ import javax.persistence.*;
  */
 @Entity
 @Table(name="users")
-public class User implements Serializable {
+//@NamedQuery(name='User.findById', query='select u from User u where u.id = :id')
+public class User  implements Serializable{
+	//public static final String FIND_BY_ID = "User.findById";
+	//public static final String FIND_BY_EMAIL = "User.findByEmail";
+	
 	private static final long serialVersionUID = 1L;
 	private long id;
 	private String name;
@@ -17,6 +22,7 @@ public class User implements Serializable {
 	private String username;
 	private String password;
 	private boolean avtive;
+	private String email;
 	
 	@Id
 	@GeneratedValue(strategy=GenerationType.IDENTITY)
@@ -73,7 +79,15 @@ public class User implements Serializable {
 		this.avtive = avtive;
 	}
 	
+	public String getEmail() {
+		return email;
+	}
+
+	public void setEmail(String email) {
+		this.email = email;
+	}
+
 	public User() {
 		super();
-	}   
+	}
 }

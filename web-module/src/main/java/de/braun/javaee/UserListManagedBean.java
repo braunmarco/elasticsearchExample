@@ -8,14 +8,14 @@ import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 
 import de.braun.javaee.models.User;
-import de.braun.javaee.service.UserManagerBeanRemote;
+import de.braun.javaee.service.UserFacade;
 
 @ManagedBean
 @RequestScoped
 public class UserListManagedBean {
 
 	@EJB
-	private UserManagerBeanRemote umb;
+	private UserFacade umb;
 
 	private User selectedUser;
 	private List<User> userList;

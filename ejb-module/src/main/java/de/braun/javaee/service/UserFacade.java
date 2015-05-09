@@ -2,16 +2,16 @@ package de.braun.javaee.service;
 
 import java.util.List;
 
+import javax.ejb.Local;
 import javax.ejb.Remote;
 
 import de.braun.javaee.models.User;
 
-@Remote
-public interface UserManagerBeanRemote {
+@Local
+public interface UserFacade {
 	public void addUser (final User user);
 	public void updateUser (final User user);
-	public void removeUser (final long id);
-	public void setStatus (final boolean active);
+	public void removeUser (final int id);
 	public List<User> getUsers ();
 	public User getUser (final long id);
 }

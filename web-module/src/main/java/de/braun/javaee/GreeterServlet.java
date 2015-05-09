@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import de.braun.javaee.models.User;
-import de.braun.javaee.service.UserManagerBean;
+import de.braun.javaee.service.UserFacadceImpl;
 
 public class GreeterServlet extends HttpServlet {
 
@@ -22,7 +22,7 @@ public class GreeterServlet extends HttpServlet {
 	private static final long serialVersionUID = 1L;
 
 	@EJB
-	UserManagerBean umb;
+	UserFacadceImpl umb;
 
 	@EJB
 	LibraryPersistenceBean lpb;

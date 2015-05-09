@@ -7,13 +7,13 @@ import javax.faces.bean.SessionScoped;
 import javax.faces.bean.ViewScoped;
 
 import de.braun.javaee.models.User;
-import de.braun.javaee.service.UserManagerBeanRemote;
+import de.braun.javaee.service.UserFacade;
 
 @ManagedBean
 @SessionScoped
 public class UserManagedBean {
 	@EJB
-	private UserManagerBeanRemote umb;
+	private UserFacade umb;
 	
 	private User user;
 	private String surname;
