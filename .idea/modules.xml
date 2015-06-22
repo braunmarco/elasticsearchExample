@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/ElasticSearchExample.iml" filepath="$PROJECT_DIR$/ElasticSearchExample.iml" />
+      <module fileurl="file://$PROJECT_DIR$/elasticsearchExample.iml" filepath="$PROJECT_DIR$/elasticsearchExample.iml" />
     </modules>
   </component>
 </project>
